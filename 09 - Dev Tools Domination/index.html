@@ -9,7 +9,7 @@
   <p onClick="makeGreen()">×BREAK×DOWN×</p>
 
   <script>
-    const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
+    const dogs = [{ name: 'Snickers', age: 2 }, { name: 'Hugo', age: 8 }];
 
     function makeGreen() {
       const p = document.querySelector('p');
@@ -18,28 +18,65 @@
     }
 
     // Regular
+    console.log('Regular output');
 
     // Interpolated
+    console.log(`Getting dog's name from var: ${dogs[0]['name']}`);
 
     // Styled
+    console.log('%c Text styling inside string.', 'font-size:50px');
 
     // warning!
+    console.warn('Achtung!');
 
     // Error :|
+    console.error('Your argumet is invalid!');
 
     // Info
+    console.info('I\'m learning JS at Wess Boss courses!');
 
     // Testing
+    console.assert(1 === 1, '1 !=== 0');
+    const p = document.querySelector('p');
 
     // clearing
+    // consol.clear();
 
     // Viewing DOM Elements
+    console.log(p);
+    // console.dir(p);
+
 
     // Grouping together
+    dogs.forEach(dog => {
+    	console.groupCollapsed(`${dog.name}`);
+    	console.log(`This is ${dog.name}`);
+    	console.log(`${dog.name} is ${dog.age} years old`);
+    	console.log(`${dog.name} is ${dog.age * 7} dog's years old`);
+    	console.groupEnd(`${dog.name}`);
+    })
 
     // counting
+    console.count('dog');
+    console.count('dog');
+    console.count('dog');
+    console.count('dog');
 
     // timing
+
+    console.time('for each dog')
+    dogs.forEach(dog => {
+    	console.group(`${dog.name}`);
+    	console.log(`This is ${dog.name}`);
+    	console.log(`${dog.name} is ${dog.age} years old`);
+    	console.log(`${dog.name} is ${dog.age * 7} dog's years old`);
+    	console.groupEnd(`${dog.name}`);
+    })
+    console.timeEnd('for each dog');
+
+    // table
+    console.table(dogs);
+
 
   </script>
 </body>
